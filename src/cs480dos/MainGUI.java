@@ -1,3 +1,5 @@
+package cs480dos;
+
 
 import java.io.IOException;
 import javafx.application.*;
