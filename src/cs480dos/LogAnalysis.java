@@ -28,11 +28,11 @@ public class LogAnalysis {
         for(int index = 1; index < list.size(); index++)
         {
             //while time difference is less then 2 add to current chunk range
-            if((list.get(index).getTime() - list.get(index-1).getTime()) < 7)
+            if(Math.abs(list.get(index).getTime() - list.get(index-1).getTime()) < 6)
                 range[1]++;
             else //list at index is not part of any previous attack so move next range here
             {
-                if(range[1]-range[0]>=400)
+                if(range[1]-range[0]>=400)// current chunk is big enough to be threat can be adjusted for different levels later
                     chunkList.add(range);
                 range = new int[2];
                 range[0] = index;

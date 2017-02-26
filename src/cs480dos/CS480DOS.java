@@ -22,18 +22,10 @@ public class CS480DOS {
     {
         File logFile = new File("server-log.txt");
         LogParser lp = new LogParser(logFile);
-        System.out.println("Parsed");
         ArrayList<Log> list = lp.readText();
-        
-        System.out.println("readd");
         LogAnalysis results = new LogAnalysis(list);
-        
         results.setChunks();
-        
-        System.out.println("Analyized");
         ArrayList<int[]> chunks = results.getChunks();
-       
-        
         System.out.println(chunks.size());
         for(int index = 0; index < chunks.size();index++)
         {

@@ -5,6 +5,7 @@
  */
 package cs480dos;
 
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -23,11 +24,12 @@ public class Log
         String srcIP;
         String dstIP;
         Date time;
-        
+        private Calendar cal;
         public Log()
         {
             list = new String[9];
             port = new String[2];
+            cal = Calendar.getInstance();
         }
         public void setValues()
         {
@@ -43,13 +45,15 @@ public class Log
         }
         public void setTime()
         {
-            int year =Integer.parseInt(list[1].substring(6))-1900;
+            int year =Integer.parseInt(list[1].substring(6));
             int month =Integer.parseInt(list[1].substring(0,2));
             int day= Integer.parseInt(list[1].substring(3,5));
             int hours= Integer.parseInt(list[2].substring(0,2));
             int min= Integer.parseInt(list[2].substring(3,5));
             int sec= Integer.parseInt(list[2].substring(6));
-            time = new Date(year,month,day,hours,min,sec);
+            //Calendar.set(year + 1900, month, date, hrs, min, sec);
+            cal.set(year,month-1,day,hours,min,sec);
+            time = cal.getTime();
         }
         public String toString()
         {
