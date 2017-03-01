@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cs480dos;
+
 
 import java.io.File;
 import java.io.IOException;
@@ -20,7 +20,7 @@ public class CS480DOS {
      */
     public static void main(String[] args)throws IOException 
     {
-        File logFile = new File("server-log.txt");
+        File logFile = new File("C:\\Users\\user\\Desktop\\testlog.txt\\");
         LogParser lp = new LogParser(logFile);
         ArrayList<Log> list = lp.readText();
         LogAnalysis results = new LogAnalysis(list);

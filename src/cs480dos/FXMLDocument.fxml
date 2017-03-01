@@ -6,7 +6,6 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -25,9 +24,9 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="History">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="By Date">
+                    <MenuItem mnemonicParsing="false" onAction="#getAnalysisByDate" text="By Date">
                            <graphic>
-                              <DatePicker />
+                              <DatePicker fx:id="datePicker" editable="false" />
                            </graphic>
                         </MenuItem>
                   </items>
@@ -38,17 +37,14 @@
          <center>
             <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <ScrollPane prefHeight="270.0" prefWidth="450.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="25.0">
-                    <content>
-                      <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="400.0" />
-                    </content>
-                  </ScrollPane>
-                  <Label layoutX="240.0" layoutY="4.0" text="Log Contents" AnchorPane.rightAnchor="310.0" />
-                  <Button layoutX="494.0" layoutY="111.0" mnemonicParsing="false" prefWidth="94.0" text="Run Analysis" />
-                  <TextArea fx:id="contents" editable="false" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="450.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="25.0" />
-                  <Button fx:id="clearContents" disable="true" layoutX="494.0" layoutY="59.0" mnemonicParsing="false" onAction="#clearArea" text="Clear Contents" />
-                  <Button layoutX="494.0" layoutY="26.0" mnemonicParsing="false" prefWidth="94.0" text="Save File" />
-                  <Separator layoutX="494.0" layoutY="99.0" prefWidth="94.0" />
+                  <Label layoutX="218.0" layoutY="14.0" text="Log Contents" />
+                  <Button fx:id="analysis" disable="true" layoutX="492.0" layoutY="91.0" mnemonicParsing="false" onAction="#runAnalysis" prefWidth="94.0" text="Run Analysis" />
+                  <TextArea fx:id="contents" editable="false" layoutX="28.0" layoutY="40.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="450.0" />
+                  <Button fx:id="clearContents" disable="true" layoutX="492.0" layoutY="40.0" mnemonicParsing="false" onAction="#clearArea" text="Clear Contents" />
+                  <Separator layoutX="492.0" layoutY="77.0" prefWidth="94.0" />
+                  <Button fx:id="analysisSave" disable="true" layoutX="492.0" layoutY="125.0" mnemonicParsing="false" onAction="#saveAnalysis" prefWidth="94.0" text="Save Analysis" />
+                  <Label fx:id="problemDisplay" layoutX="226.0" layoutY="332.0" textFill="#cd2727" />
+                  <Label fx:id="saveMessage" layoutX="501.0" layoutY="167.0" />
                </children>
             </AnchorPane>
          </center></BorderPane>

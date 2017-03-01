@@ -1,4 +1,4 @@
-package cs480dos;
+
 
 
 import java.io.IOException;
@@ -10,7 +10,7 @@ import javafx.stage.*;
 
 
 
-public class MainGUI extends Application {    
+public class MainGUI extends Application {
     
     @Override
     public void start(Stage stage) throws IOException {

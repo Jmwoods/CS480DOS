@@ -1,4 +1,4 @@
-package cs480dos;
+
 
 
 import java.io.*;
@@ -9,12 +9,8 @@ public class LogParser {
     private BufferedReader reader;
     
     // Initialize parser with the file to be read
-    public LogParser(File file) {
-        try {
+    public LogParser(File file) throws FileNotFoundException {
             reader = new BufferedReader(new FileReader(file));
-        } catch (FileNotFoundException ex) {
-            reader = null;
-        }
     }
     
     // Returns whether the parser is able to read
